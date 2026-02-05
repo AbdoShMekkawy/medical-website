@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Test your medical knowledge with interactive practice questions and instant feedback.">
+  <title>Practice Questions - MekkawyMedLearn</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="stylesheet" href="css/pages/practice.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">M</div>
+        <span class="logo-text">Mekkawy<span>MedLearn</span></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="courses.html" class="nav-link">Courses</a>
+        <a href="flashcards.html" class="nav-link">Flashcards</a>
+        <a href="practice.html" class="nav-link active">Practice</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container page-header-content">
+        <h1 class="page-title">Practice Questions</h1>
+        <p class="page-description">Test your knowledge with USMLE-style questions and get instant feedback</p>
+      </div>
+    </section>
+
+    <!-- Practice Controls -->
+    <section class="container">
+      <div class="practice-controls">
+        <div class="control-group">
+          <label for="topicSelect">Topic</label>
+          <select id="topicSelect" class="sort-select">
+            <option value="all">All Topics</option>
+            <option value="neurology">🧠 Neurology</option>
+            <option value="cardiology">🫀 Cardiology</option>
+            <option value="pharmacology">💊 Pharmacology</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="difficultySelect">Difficulty</label>
+          <select id="difficultySelect" class="sort-select">
+            <option value="all">All Levels</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="modeSelect">Mode</label>
+          <select id="modeSelect" class="sort-select">
+            <option value="practice">Practice (Untimed)</option>
+            <option value="timed">Timed (90s/question)</option>
+            <option value="exam">Exam Mode (40 questions)</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" id="startQuizBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21"/></svg>
+          Start Practice
+        </button>
+      </div>
+    </section>
+
+    <!-- Question Area -->
+    <section class="practice-area container" id="practiceArea">
+      <!-- Progress Bar -->
+      <div class="quiz-progress">
+        <div class="quiz-progress-info">
+          <span class="question-number">Question <span id="currentQuestion">1</span> of <span id="totalQuestions">10</span></span>
+          <span class="timer" id="timer" hidden>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span id="timeRemaining">1:30</span>
+          </span>
+        </div>
+        <div class="progress">
+          <div class="progress-bar" id="quizProgressBar" style="width: 10%"></div>
+        </div>
+      </div>
+
+      <!-- Question Card -->
+      <div class="question-card card-osmosis" id="questionCard">
+        <div class="question-header">
+          <span class="pill-tag pill-tag-primary" id="questionTopic">Neurology</span>
+          <span class="pill-tag" id="questionDifficulty">Medium</span>
+        </div>
+        
+        <div class="question-stem" id="questionStem">
+          <p>A 65-year-old man presents with progressive memory loss over the past 2 years. His wife reports that he frequently forgets recent conversations and has difficulty managing their finances. Physical exam is unremarkable. MRI shows diffuse cortical atrophy, predominantly in the temporal and parietal lobes.</p>
+          <p class="question-prompt"><strong>Which of the following is the most likely diagnosis?</strong></p>
+        </div>
+
+        <div class="answer-options" id="answerOptions">
+          <button class="answer-option" data-index="0">
+            <span class="answer-option-letter">A</span>
+            <span class="answer-text">Vascular dementia</span>
+          </button>
+          <button class="answer-option" data-index="1">
+            <span class="answer-option-letter">B</span>
+            <span class="answer-text">Alzheimer's disease</span>
+          </button>
+          <button class="answer-option" data-index="2">
+            <span class="answer-option-letter">C</span>
+            <span class="answer-text">Normal pressure hydrocephalus</span>
+          </button>
+          <button class="answer-option" data-index="3">
+            <span class="answer-option-letter">D</span>
+            <span class="answer-text">Frontotemporal dementia</span>
+          </button>
+          <button class="answer-option" data-index="4">
+            <span class="answer-option-letter">E</span>
+            <span class="answer-text">Lewy body dementia</span>
+          </button>
+        </div>
+
+        <!-- Explanation (hidden until answer submitted) -->
+        <div class="explanation-panel" id="explanationPanel" hidden>
+          <div class="explanation-header">
+            <span class="result-badge correct" id="resultBadge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Correct!
+            </span>
+          </div>
+          <div class="explanation-content" id="explanationContent">
+            <h4>Explanation</h4>
+            <p><strong>B. Alzheimer's disease</strong> is correct. The clinical presentation of progressive memory loss affecting daily functioning, combined with MRI findings of diffuse cortical atrophy (especially temporal and parietal), is classic for Alzheimer's disease.</p>
+            <p><strong>Key Points:</strong></p>
+            <ul>
+              <li>Most common cause of dementia (60-80% of cases)</li>
+              <li>Gradual onset with progressive decline</li>
+              <li>Memory impairment is the hallmark early symptom</li>
+              <li>Imaging shows atrophy, especially in hippocampus and temporal lobes</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="question-actions">
+          <button class="btn btn-primary" id="submitBtn">Submit Answer</button>
+          <button class="btn btn-primary" id="nextBtn" hidden>Next Question</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Summary (hidden by default) -->
+    <section class="results-summary container" id="resultsSummary" hidden>
+      <div class="results-card card-osmosis">
+        <h2>Practice Complete! 🎉</h2>
+        
+        <div class="score-display">
+          <div class="score-ring">
+            <div class="progress-ring" style="width: 120px; height: 120px;">
+              <svg viewBox="0 0 36 36">
+                <circle class="progress-ring-bg" cx="18" cy="18" r="15.915"/>
+                <circle class="progress-ring-fill" id="scoreRing" cx="18" cy="18" r="15.915" 
+                  stroke-dasharray="100" stroke-dashoffset="20"/>
+              </svg>
+              <span class="progress-ring-text" id="scorePercent">80%</span>
+            </div>
+          </div>
+          <div class="score-details">
+            <div class="score-stat">
+              <span class="score-value correct" id="correctAnswers">8</span>
+              <span class="score-label">Correct</span>
+            </div>
+            <div class="score-stat">
+              <span class="score-value incorrect" id="incorrectAnswers">2</span>
+              <span class="score-label">Incorrect</span>
+            </div>
+            <div class="score-stat">
+              <span class="score-value" id="avgTime">45s</span>
+              <span class="score-label">Avg. Time</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="performance-breakdown">
+          <h3>Performance by Topic</h3>
+          <div class="topic-bars" id="topicBars">
+            <!-- Dynamically generated -->
+          </div>
+        </div>
+
+        <div class="results-actions">
+          <button class="btn btn-primary" id="reviewMissedBtn">Review Missed Questions</button>
+          <button class="btn btn-secondary" id="newQuizBtn">Start New Practice</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 MekkawyMedLearn. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Live region for screen reader announcements -->
+  <div class="live-region" aria-live="polite" id="announcer"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/practice-questions.js"></script>
+</body>
+</html>

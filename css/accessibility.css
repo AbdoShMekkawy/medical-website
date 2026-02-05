@@ -1,0 +1,311 @@
+/* ============================================
+   MekkawyMedLearn - Accessibility Styles
+   WCAG 2.1 AA Compliance
+   ============================================ */
+
+/* ===== Focus States ===== */
+/* Strong, visible focus indicators for keyboard navigation */
+:focus-visible {
+  outline: 3px solid var(--primary-500);
+  outline-offset: 2px;
+}
+
+/* Remove default focus for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Custom focus ring for buttons and interactive elements */
+.btn:focus-visible,
+.icon-btn:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--primary-500);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px rgba(0, 145, 255, 0.2);
+}
+
+/* Focus for cards and clickable containers */
+.card:focus-visible,
+.course-card-enhanced:focus-visible,
+.flashcard:focus-visible {
+  outline: 3px solid var(--primary-500);
+  outline-offset: 4px;
+}
+
+/* Input focus enhancement */
+.input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 4px rgba(0, 145, 255, 0.15);
+}
+
+/* ===== Skip Link ===== */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--space-3) var(--space-6);
+  background: var(--primary-600);
+  color: white;
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-semibold);
+  z-index: 9999;
+  transition: top var(--transition-fast);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* ===== Screen Reader Only ===== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Make sr-only content visible on focus */
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: var(--space-2) var(--space-4);
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Disable video autoplay for motion sensitivity */
+  video[autoplay] {
+    animation: none;
+  }
+
+  /* Keep essential transforms but remove animations */
+  .flashcard-inner {
+    transition: none;
+  }
+
+  .btn:hover,
+  .card:hover {
+    transform: none;
+  }
+}
+
+/* ===== High Contrast Mode ===== */
+@media (prefers-contrast: high) {
+  :root {
+    --border-color: #000000;
+    --text-secondary: #1a1a1a;
+    --text-tertiary: #333333;
+  }
+
+  .btn-primary {
+    background: #000000;
+    border: 2px solid #000000;
+  }
+
+  .btn-secondary {
+    border-width: 3px;
+    border-color: #000000;
+  }
+
+  .card,
+  .card-osmosis {
+    border-width: 2px;
+    border-color: #000000;
+  }
+
+  .answer-option {
+    border-width: 3px;
+  }
+
+  .answer-option.correct {
+    border-color: #006600;
+    background: #ccffcc;
+  }
+
+  .answer-option.incorrect {
+    border-color: #cc0000;
+    background: #ffcccc;
+  }
+}
+
+[data-theme="dark"] {
+  @media (prefers-contrast: high) {
+    --border-color: #ffffff;
+    --text-secondary: #e0e0e0;
+    --text-tertiary: #cccccc;
+  }
+}
+
+/* ===== Color Contrast Improvements ===== */
+/* Ensure minimum 4.5:1 contrast ratio for normal text */
+.text-low-contrast {
+  color: var(--gray-600); /* Fallback for light mode */
+}
+
+[data-theme="dark"] .text-low-contrast {
+  color: var(--gray-300);
+}
+
+/* ===== Touch Target Sizes ===== */
+/* Minimum 44x44px touch targets for mobile accessibility */
+@media (pointer: coarse) {
+  .btn,
+  .icon-btn,
+  .nav-link,
+  .tab,
+  .filter-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .answer-option {
+    min-height: 52px;
+  }
+
+  .speed-btn {
+    min-height: 44px;
+    padding: var(--space-2) var(--space-3);
+  }
+}
+
+/* ===== Keyboard Navigation Helpers ===== */
+/* Show keyboard shortcuts hint on focus */
+[data-shortcut]::after {
+  content: attr(data-shortcut);
+  margin-left: var(--space-2);
+  padding: var(--space-1) var(--space-2);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+[data-shortcut]:focus-visible::after {
+  opacity: 1;
+}
+
+/* ===== Live Region for Screen Readers ===== */
+.live-region {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* ===== Link Accessibility ===== */
+/* Underline links in body text for visibility */
+.prose a,
+.content a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: var(--primary-600);
+}
+
+.prose a:hover,
+.content a:hover {
+  color: var(--primary-700);
+  text-decoration-thickness: 2px;
+}
+
+/* ===== Form Accessibility ===== */
+/* Error state with accessible colors */
+.input-error {
+  border-color: var(--error);
+  background: var(--incorrect-bg);
+}
+
+.input-error:focus-visible {
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2);
+}
+
+.error-message {
+  color: #b91c1c; /* Darker red for better contrast */
+  font-size: var(--text-sm);
+  margin-top: var(--space-1);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.error-message::before {
+  content: "⚠";
+}
+
+/* Success state */
+.input-success {
+  border-color: var(--success);
+  background: var(--correct-bg);
+}
+
+/* ===== Video Player Accessibility ===== */
+.video-caption {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  text-align: center;
+}
+
+.video-caption.high-contrast {
+  background: #000000;
+  font-size: var(--text-lg);
+}
+
+/* ===== Loading States ===== */
+/* Accessible loading indicator */
+.loading-spinner {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.loading-spinner::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--primary-500);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner::before {
+    animation: none;
+    border-top-color: var(--primary-500);
+    border-right-color: var(--primary-500);
+  }
+}

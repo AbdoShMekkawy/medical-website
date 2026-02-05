@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Study with interactive flashcards - Master medical concepts using spaced repetition.">
+  <title>Flashcards - MekkawyMedLearn</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="stylesheet" href="css/pages/flashcards.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">M</div>
+        <span class="logo-text">Mekkawy<span>MedLearn</span></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="courses.html" class="nav-link">Courses</a>
+        <a href="flashcards.html" class="nav-link active">Flashcards</a>
+        <a href="practice.html" class="nav-link">Practice</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container page-header-content">
+        <h1 class="page-title">Flashcards</h1>
+        <p class="page-description">Master medical concepts with spaced repetition learning</p>
+      </div>
+    </section>
+
+    <!-- Flashcard Controls -->
+    <section class="container">
+      <div class="flashcard-controls">
+        <div class="deck-selector">
+          <label for="deckSelect" class="sr-only">Select Deck</label>
+          <select id="deckSelect" class="sort-select">
+            <option value="neurology">🧠 Neurology</option>
+            <option value="cardiology">🫀 Cardiology</option>
+            <option value="pharmacology">💊 Pharmacology</option>
+          </select>
+        </div>
+        <div class="flashcard-stats">
+          <span class="stat-pill new">
+            <span class="stat-count" id="newCount">10</span> New
+          </span>
+          <span class="stat-pill review">
+            <span class="stat-count" id="reviewCount">5</span> Review
+          </span>
+          <span class="stat-pill mastered">
+            <span class="stat-count" id="masteredCount">25</span> Mastered
+          </span>
+        </div>
+        <div class="streak-display">
+          <div class="streak-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+            <span id="streakCount">7</span> day streak
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Flashcard Area -->
+    <section class="flashcard-area container">
+      <div class="flashcard-wrapper">
+        <!-- Progress indicator -->
+        <div class="card-progress">
+          <span class="progress-text"><span id="currentCard">1</span> / <span id="totalCards">10</span></span>
+          <div class="progress">
+            <div class="progress-bar" id="progressBar" style="width: 10%"></div>
+          </div>
+        </div>
+
+        <!-- Flashcard -->
+        <div class="flashcard" id="flashcard" tabindex="0" role="button" aria-label="Flashcard - Click or press Space to flip">
+          <div class="flashcard-inner">
+            <div class="flashcard-front">
+              <div class="flashcard-category pill-tag pill-tag-primary" id="cardCategory">Neurology</div>
+              <div class="flashcard-question" id="cardQuestion">
+                What is the most common cause of dementia?
+              </div>
+              <div class="flashcard-hint">Click or press Space to reveal answer</div>
+            </div>
+            <div class="flashcard-back">
+              <div class="flashcard-answer" id="cardAnswer">
+                <strong>Alzheimer's Disease</strong>
+                <p>Accounts for 60-80% of dementia cases. Characterized by amyloid plaques and neurofibrillary tangles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rating Buttons -->
+        <div class="rating-buttons" id="ratingButtons">
+          <button class="rating-btn rating-again" data-rating="1" data-shortcut="1">
+            <span class="rating-label">Again</span>
+            <span class="rating-time">&lt;1 min</span>
+          </button>
+          <button class="rating-btn rating-hard" data-rating="2" data-shortcut="2">
+            <span class="rating-label">Hard</span>
+            <span class="rating-time">6 min</span>
+          </button>
+          <button class="rating-btn rating-good" data-rating="3" data-shortcut="3">
+            <span class="rating-label">Good</span>
+            <span class="rating-time">10 min</span>
+          </button>
+          <button class="rating-btn rating-easy" data-rating="4" data-shortcut="4">
+            <span class="rating-label">Easy</span>
+            <span class="rating-time">4 days</span>
+          </button>
+        </div>
+
+        <!-- Keyboard shortcuts help -->
+        <div class="keyboard-hints">
+          <span><kbd>Space</kbd> Flip</span>
+          <span><kbd>1-4</kbd> Rate</span>
+          <span><kbd>←</kbd><kbd>→</kbd> Navigate</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Session Summary (hidden by default) -->
+    <section class="session-summary container" id="sessionSummary" hidden>
+      <div class="summary-card card-osmosis">
+        <h2>Session Complete! 🎉</h2>
+        <div class="summary-stats">
+          <div class="summary-stat">
+            <div class="summary-stat-value" id="cardsStudied">10</div>
+            <div class="summary-stat-label">Cards Studied</div>
+          </div>
+          <div class="summary-stat">
+            <div class="summary-stat-value correct" id="correctCount">8</div>
+            <div class="summary-stat-label">Correct</div>
+          </div>
+          <div class="summary-stat">
+            <div class="summary-stat-value" id="timeSpent">5:30</div>
+            <div class="summary-stat-label">Time Spent</div>
+          </div>
+        </div>
+        <div class="summary-actions">
+          <button class="btn btn-primary" id="continueBtn">Continue Studying</button>
+          <a href="courses.html" class="btn btn-secondary">Back to Courses</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 MekkawyMedLearn. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Live region for screen reader announcements -->
+  <div class="live-region" aria-live="polite" id="announcer"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/flashcards.js"></script>
+</body>
+</html>
