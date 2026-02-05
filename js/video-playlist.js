@@ -10,17 +10,37 @@ const neurologyPlaylist = [
     id: 1,
     title: "Clinical Reasoning Dementia",
     filename: "01- Clinical Reasoning Dementia.mp4",
-    duration: null, // Will be calculated automatically
+    duration: null,
     completed: false
   },
-  // Add more videos as you add them to the folder:
-  // {
-  //   id: 2,
-  //   title: "Stroke Assessment",
-  //   filename: "02- Stroke Assessment.mp4",
-  //   duration: null,
-  //   completed: false
-  // },
+  {
+    id: 2,
+    title: "Brain Tumors",
+    filename: "02- Brain Tumors.mp4",
+    duration: null,
+    completed: false
+  },
+  {
+    id: 3,
+    title: "Clinical Reasoning Headache",
+    filename: "03- Clinical Reasoning Headache.mp4",
+    duration: null,
+    completed: false
+  },
+  {
+    id: 4,
+    title: "Clinical Reasoning Hyperkinetic Movement Disorders",
+    filename: "04- Clinical Reasoning Hyperkinetic movement disorders.mp4",
+    duration: null,
+    completed: false
+  },
+  {
+    id: 5,
+    title: "Clinical Reasoning Hypokinetic Movement Disorders",
+    filename: "05- Clinical Reasoning Hypokinetic movement disorders.mp4",
+    duration: null,
+    completed: false
+  },
 ];
 
 class VideoPlaylist {
