@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Test your medical knowledge with interactive quizzes on MekkawyMedLearn.">
+  <title>Quiz - Human Anatomy | MekkawyMedLearn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages/quiz.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">M</div>
+        <span class="logo-text">Mekkawy<span>MedLearn</span></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="courses.html" class="nav-link">Courses</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="quiz-page" id="main-content">
+    <div class="quiz-container">
+      <div class="quiz-header">
+        <h1 class="quiz-title">Human Anatomy Quiz</h1>
+        <p style="color:var(--text-secondary);margin-bottom:1.5rem;">Test your knowledge from Chapter 1</p>
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" style="width:40%;"></div>
+          </div>
+          <span style="font-size:0.875rem;font-weight:600;color:var(--text-secondary);">4/10</span>
+        </div>
+      </div>
+
+      <div class="quiz-card" id="questionCard">
+        <span class="question-number">Question 4 of 10</span>
+        <h2 class="question-text">Which plane divides the body into anterior and posterior portions?</h2>
+        
+        <div class="options-list" id="optionsList">
+          <label class="option" data-option="a">
+            <span class="option-letter">A</span>
+            <span class="option-text">Sagittal Plane</span>
+          </label>
+          <label class="option" data-option="b">
+            <span class="option-letter">B</span>
+            <span class="option-text">Coronal (Frontal) Plane</span>
+          </label>
+          <label class="option" data-option="c">
+            <span class="option-letter">C</span>
+            <span class="option-text">Transverse (Horizontal) Plane</span>
+          </label>
+          <label class="option" data-option="d">
+            <span class="option-letter">D</span>
+            <span class="option-text">Oblique Plane</span>
+          </label>
+        </div>
+
+        <div id="explanation" style="display:none;margin-top:1.5rem;padding:1rem;background:var(--secondary-100);border-radius:var(--radius-lg);border-left:4px solid var(--secondary-500);">
+          <strong style="color:var(--secondary-700);">✓ Correct!</strong>
+          <p style="margin:0.5rem 0 0;color:var(--text-secondary);font-size:0.875rem;">The Coronal (Frontal) Plane divides the body into anterior (front) and posterior (back) portions. It runs vertically from side to side.</p>
+        </div>
+      </div>
+
+      <div class="quiz-actions">
+        <button class="btn btn-secondary" id="prevBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          Previous
+        </button>
+        <button class="btn btn-primary" id="nextBtn">
+          Next Question
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

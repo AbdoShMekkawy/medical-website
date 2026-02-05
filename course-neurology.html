@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Neurology Course - Master clinical neurology with comprehensive video lessons on MekkawyMedLearn.">
+  <title>Neurology Course | MekkawyMedLearn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages/lesson.css">
+  <link rel="stylesheet" href="css/pages/course-detail.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">M</div>
+        <span class="logo-text">Mekkawy<span>MedLearn</span></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="courses.html" class="nav-link">Courses</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="lesson-page" id="main-content">
+    <div class="lesson-main">
+      <!-- Video Player -->
+      <div class="video-container">
+        <video 
+          id="lessonVideo"
+          class="video-player"
+          controls
+          preload="metadata"
+        >
+          <source id="videoSource" src="videos/neurology/01- Clinical Reasoning Dementia.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Lesson Content -->
+      <div class="lesson-content">
+        <div class="lesson-header">
+          <nav class="breadcrumb">
+            <a href="courses.html">Courses</a>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            <span class="current">Neurology</span>
+          </nav>
+          <h1 class="lesson-title" id="currentLessonTitle">Clinical Reasoning Dementia</h1>
+          <div class="lesson-meta">
+            <span class="meta-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span id="videoDuration">Loading...</span>
+            </span>
+            <span class="meta-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              Dr. Mekkawy
+            </span>
+            <span class="meta-item category-tag">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              Neurology
+            </span>
+          </div>
+        </div>
+
+        <div class="lesson-tabs">
+          <button class="lesson-tab active" data-tab="about">About</button>
+          <button class="lesson-tab" data-tab="resources">Resources</button>
+          <button class="lesson-tab" data-tab="notes">Notes</button>
+        </div>
+
+        <div class="tab-content" id="tabContent">
+          <div class="tab-panel active" id="about">
+            <h3>About This Lesson</h3>
+            <p>This lesson covers clinical reasoning approaches for diagnosing and managing dementia cases. Learn the systematic approach to evaluating patients with cognitive decline.</p>
+            
+            <h3>Learning Objectives</h3>
+            <ul>
+              <li>Understand the clinical presentation of various types of dementia</li>
+              <li>Learn systematic approaches to differential diagnosis</li>
+              <li>Apply clinical reasoning frameworks to complex cases</li>
+              <li>Recognize red flags and atypical presentations</li>
+            </ul>
+          </div>
+          <div class="tab-panel" id="resources">
+            <h3>Downloadable Resources</h3>
+            <p>Resources for this lesson will be available soon.</p>
+          </div>
+          <div class="tab-panel" id="notes">
+            <h3>Your Notes</h3>
+            <textarea class="notes-textarea" placeholder="Take notes while watching the video..."></textarea>
+            <button class="btn btn-primary save-notes">Save Notes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar Playlist -->
+    <aside class="lesson-sidebar">
+      <div class="sidebar-header">
+        <h2 class="sidebar-title">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          Neurology Course
+        </h2>
+        <div class="sidebar-progress">
+          <div class="sidebar-progress-bar">
+            <div class="sidebar-progress-fill" id="progressFill" style="width:0%;"></div>
+          </div>
+          <span class="progress-text" id="progressText">0% Complete</span>
+        </div>
+      </div>
+
+      <div class="playlist-container" id="playlistContainer">
+        <!-- Playlist items will be dynamically generated -->
+      </div>
+    </aside>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/video-playlist.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+/* ============================================
+   MekkawyMedLearn - Quiz Page Styles
+   ============================================ */
+
+.quiz-page { padding-top: var(--header-height); min-height: 100vh; }
+
+.quiz-container { max-width: 800px; margin: 0 auto; padding: var(--space-8); }
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.quiz-title { font-size: var(--text-3xl); margin-bottom: var(--space-4); }
+
+.quiz-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.quiz-progress-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.quiz-progress-fill {
+  height: 100%;
+  background: var(--gradient-primary);
+  transition: width var(--transition-base);
+}
+
+.quiz-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  margin-bottom: var(--space-6);
+}
+
+.question-number {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  background: var(--primary-100);
+  color: var(--primary-600);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-4);
+}
+
+.question-text {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.options-list { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.option:hover { border-color: var(--primary-400); background: var(--primary-50); }
+
+.option.selected { border-color: var(--primary-500); background: var(--primary-100); }
+
+.option.correct { border-color: var(--success); background: var(--secondary-100); }
+
+.option.incorrect { border-color: var(--error); background: rgba(239, 68, 68, 0.1); }
+
+.option-letter {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+}
+
+.option.selected .option-letter { background: var(--primary-500); color: white; }
+
+.quiz-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.quiz-result {
+  text-align: center;
+  padding: var(--space-12);
+}
+
+.result-score {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-extrabold);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: var(--space-4);
+}

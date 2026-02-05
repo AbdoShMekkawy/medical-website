@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore our comprehensive medical courses - Anatomy, Physiology, Pathology, Pharmacology and more.">
+  <title>Courses - MekkawyMedLearn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages/courses.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">M</div>
+        <span class="logo-text">Mekkawy<span>MedLearn</span></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="courses.html" class="nav-link active">Courses</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <a href="courses.html" class="btn btn-primary">Start Learning</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container page-header-content">
+        <h1 class="page-title">Explore Our Courses</h1>
+        <p class="page-description">Discover comprehensive medical courses designed by experts to help you excel in your medical journey.</p>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="container">
+      <div class="filters-section">
+        <div class="filters-left">
+          <button class="filter-btn active" data-filter="all">All Courses</button>
+          <button class="filter-btn" data-filter="anatomy">Anatomy</button>
+          <button class="filter-btn" data-filter="physiology">Physiology</button>
+          <button class="filter-btn" data-filter="pathology">Pathology</button>
+          <button class="filter-btn" data-filter="pharmacology">Pharmacology</button>
+          <button class="filter-btn" data-filter="surgery">Surgery</button>
+        </div>
+        <div class="filters-right">
+          <select class="sort-select" id="sortSelect">
+            <option value="popular">Most Popular</option>
+            <option value="newest">Newest</option>
+            <option value="rating">Highest Rated</option>
+          </select>
+          <span class="results-count">Showing 12 courses</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Grid -->
+    <section class="courses-section container">
+      <div class="courses-main-grid" id="coursesGrid">
+        
+        <!-- Course Card 1 -->
+        <article class="course-card-enhanced">
+          <div class="course-card-image">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#3b82f6,#10b981);display:flex;align-items:center;justify-content:center;color:white;font-size:4rem;">🫀</div>
+            <div class="course-card-overlay"></div>
+            <div class="course-card-play">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="course-badges">
+              <span class="course-level">Beginner</span>
+              <span class="course-price-badge free">Free</span>
+            </div>
+          </div>
+          <div class="course-card-body">
+            <span class="course-category-tag">Anatomy</span>
+            <h3 class="course-card-title">Human Anatomy Essentials: Complete Foundation</h3>
+            <div class="course-card-instructor">
+              <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#8b5cf6);display:flex;align-items:center;justify-content:center;color:white;font-size:12px;font-weight:bold;">DM</div>
+              <span class="instructor-name">Dr. Mekkawy</span>
+            </div>
+            <div class="course-card-stats">
+              <span class="stat-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                24h
+              </span>
+              <span class="stat-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                42 Lessons
+              </span>
+              <div class="course-rating">
+                <span class="rating-value">4.9</span>
+                <span class="rating-stars">★</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course Card 2 - Neurology -->
+        <a href="course-neurology.html" class="course-card-link">
+        <article class="course-card-enhanced">
+          <div class="course-card-image">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#8b5cf6,#ec4899);display:flex;align-items:center;justify-content:center;color:white;font-size:4rem;">🧠</div>
+            <div class="course-card-overlay"></div>
+            <div class="course-card-play">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="course-badges">
+              <span class="course-level">Advanced</span>
+            </div>
+          </div>
+          <div class="course-card-body">
+            <span class="course-category-tag">Neurology</span>
+            <h3 class="course-card-title">Neuroanatomy & Clinical Correlations</h3>
+            <div class="course-card-instructor">
+              <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#10b981,#3b82f6);display:flex;align-items:center;justify-content:center;color:white;font-size:12px;font-weight:bold;">DM</div>
+              <span class="instructor-name">Dr. Mekkawy</span>
+            </div>
+            <div class="course-card-stats">
+              <span class="stat-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                18h
+              </span>
+              <span class="stat-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                1 Lesson
+              </span>
+              <div class="course-rating">
+                <span class="rating-value">4.8</span>
+                <span class="rating-stars">★</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        </a>
+
+        <!-- Course Card 3 -->
+        <article class="course-card-enhanced">
+          <div class="course-card-image">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#f59e0b,#ef4444);display:flex;align-items:center;justify-content:center;color:white;font-size:4rem;">💊</div>
+            <div class="course-card-overlay"></div>
+            <div class="course-card-play">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="course-badges">
+              <span class="course-level">Intermediate</span>
+            </div>
+          </div>
+          <div class="course-card-body">
+            <span class="course-category-tag">Pharmacology</span>
+            <h3 class="course-card-title">Clinical Pharmacology Masterclass</h3>
+            <div class="course-card-instructor">
+              <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#ef4444);display:flex;align-items:center;justify-content:center;color:white;font-size:12px;font-weight:bold;">AK</div>
+              <span class="instructor-name">Dr. Ali Khaled</span>
+            </div>
+            <div class="course-card-stats">
+              <span class="stat-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                32h
+              </span>
+              <span class="stat-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                56 Lessons
+              </span>
+              <div class="course-rating">
+                <span class="rating-value">4.9</span>
+                <span class="rating-stars">★</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course Card 4 -->
+        <article class="course-card-enhanced">
+          <div class="course-card-image">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#06b6d4,#3b82f6);display:flex;align-items:center;justify-content:center;color:white;font-size:4rem;">🫁</div>
+            <div class="course-card-overlay"></div>
+            <div class="course-card-play">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="course-badges">
+              <span class="course-level">Beginner</span>
+            </div>
+          </div>
+          <div class="course-card-body">
+            <span class="course-category-tag">Physiology</span>
+            <h3 class="course-card-title">Respiratory System Physiology</h3>
+            <div class="course-card-instructor">
+              <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#06b6d4,#3b82f6);display:flex;align-items:center;justify-content:center;color:white;font-size:12px;font-weight:bold;">FH</div>
+              <span class="instructor-name">Dr. Fatima Hassan</span>
+            </div>
+            <div class="course-card-stats">
+              <span class="stat-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                12h
+              </span>
+              <span class="stat-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                18 Lessons
+              </span>
+              <div class="course-rating">
+                <span class="rating-value">4.7</span>
+                <span class="rating-stars">★</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course Card 5 -->
+        <article class="course-card-enhanced">
+          <div class="course-card-image">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#ef4444,#f97316);display:flex;align-items:center;justify-content:center;color:white;font-size:4rem;">🔬</div>
+            <div class="course-card-overlay"></div>
+            <div class="course-card-play">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="course-badges">
+              <span class="course-level">Advanced</span>
+            </div>
+          </div>
+          <div class="course-card-body">
+            <span class="course-category-tag">Pathology</span>
+            <h3 class="course-card-title">General Pathology: From Basics to Advanced</h3>
+            <div class="course-card-instructor">
+              <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#ef4444,#f97316);display:flex;align-items:center;justify-content:center;color:white;font-size:12px;font-weight:bold;">MN</div>
+              <span class="instructor-name">Dr. Mohamed Nasser</span>
+            </div>
+            <div class="course-card-stats">
+              <span class="stat-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                40h
+              </span>
+              <span class="stat-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                68 Lessons
+              </span>
+              <div class="course-rating">
+                <span class="rating-value">4.9</span>
+                <span class="rating-stars">★</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Course Card 6 -->
+        <article class="course-card-enhanced">
+          <div class="course-card-image">
+            <div style="width:100%;height:100%;background:linear-gradient(135deg,#10b981,#059669);display:flex;align-items:center;justify-content:center;color:white;font-size:4rem;">🩺</div>
+            <div class="course-card-overlay"></div>
+            <div class="course-card-play">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div class="course-badges">
+              <span class="course-level">Intermediate</span>
+              <span class="course-price-badge free">Free</span>
+            </div>
+          </div>
+          <div class="course-card-body">
+            <span class="course-category-tag">Surgery</span>
+            <h3 class="course-card-title">Introduction to Surgical Principles</h3>
+            <div class="course-card-instructor">
+              <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#10b981,#059669);display:flex;align-items:center;justify-content:center;color:white;font-size:12px;font-weight:bold;">YM</div>
+              <span class="instructor-name">Dr. Youssef Mansour</span>
+            </div>
+            <div class="course-card-stats">
+              <span class="stat-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                28h
+              </span>
+              <span class="stat-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                45 Lessons
+              </span>
+              <div class="course-rating">
+                <span class="rating-value">4.8</span>
+                <span class="rating-stars">★</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="pagination-btn disabled" aria-label="Previous page">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="pagination-btn active">1</button>
+        <button class="pagination-btn">2</button>
+        <button class="pagination-btn">3</button>
+        <span class="pagination-ellipsis">...</span>
+        <button class="pagination-btn">8</button>
+        <button class="pagination-btn" aria-label="Next page">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">M</div>
+            <span class="logo-text">Mekkawy<span>MedLearn</span></span>
+          </a>
+          <p>Empowering medical professionals with comprehensive, accessible education.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Courses</h4>
+          <div class="footer-links">
+            <a href="#">Anatomy</a><a href="#">Physiology</a><a href="#">Pathology</a><a href="#">Pharmacology</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <div class="footer-links">
+            <a href="#">Study Guides</a><a href="#">Practice Exams</a><a href="#">Blog</a><a href="#">FAQ</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 MekkawyMedLearn. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>
