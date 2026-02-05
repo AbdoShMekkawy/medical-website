@@ -258,22 +258,42 @@
 
   .flashcard-stats {
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .streak-display {
     text-align: center;
   }
 
+  /* Fixed height for mobile - more reliable than aspect-ratio */
   .flashcard {
-    aspect-ratio: 4/3;
+    aspect-ratio: auto;
+    min-height: 300px;
+    height: 300px;
+    max-width: 100%;
+  }
+
+  .flashcard-question {
+    font-size: var(--text-lg);
+  }
+
+  .flashcard-answer {
+    font-size: var(--text-base);
   }
 
   .rating-buttons {
     flex-wrap: wrap;
+    gap: var(--space-2);
   }
 
   .rating-btn {
     flex: 1 1 45%;
+    min-height: 60px;
+    padding: var(--space-2);
+  }
+
+  .rating-label {
+    font-size: var(--text-xs);
   }
 
   .keyboard-hints {
@@ -283,5 +303,22 @@
   .summary-stats {
     flex-direction: column;
     gap: var(--space-4);
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 380px) {
+  .flashcard {
+    height: 260px;
+    min-height: 260px;
+  }
+
+  .stat-pill {
+    padding: var(--space-1) var(--space-2);
+    font-size: 0.65rem;
+  }
+
+  .rating-btn {
+    flex: 1 1 100%;
   }
 }

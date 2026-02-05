@@ -581,10 +581,27 @@
 /* Flashcard Component */
 .flashcard {
   perspective: 1000px;
+  -webkit-perspective: 1000px;
   width: 100%;
   max-width: 500px;
   aspect-ratio: 3/2;
+  /* Fallback for browsers without aspect-ratio support */
+  min-height: 280px;
   cursor: pointer;
+}
+
+/* Aspect ratio fallback for older browsers */
+@supports not (aspect-ratio: 3/2) {
+  .flashcard {
+    height: 0;
+    padding-bottom: 66.67%; /* 2:3 ratio */
+    position: relative;
+  }
+  .flashcard-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 .flashcard-inner {
@@ -592,11 +609,14 @@
   width: 100%;
   height: 100%;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
 }
 
 .flashcard.flipped .flashcard-inner {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .flashcard-front,
@@ -606,25 +626,32 @@
   height: 100%;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
   border-radius: var(--radius-xl);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--space-8);
+  padding: var(--space-6);
   text-align: center;
+  /* Fix for Safari mobile - use both standard and webkit */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .flashcard-front {
   background: var(--bg-card);
   border: 2px solid var(--primary-200);
   box-shadow: 0 4px 20px rgba(0, 145, 255, 0.1);
+  z-index: 2;
 }
 
 .flashcard-back {
   background: linear-gradient(135deg, var(--primary-500), var(--secondary-500));
   color: white;
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  z-index: 1;
 }
 
 .flashcard-question {
